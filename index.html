@@ -51,15 +51,24 @@
     }
     @media (max-width: 600px){
       .gallery{
+        display: grid;
         grid-template-columns: repeat(3,1fr);
-        gap: 14px;
+        gap: 12px;
+        justify-items: center;
+      }
+      .gallery a{
+        margin-bottom: 10px;
       }
       .gallery img{
-        width: 150px;
-        height: 150px;
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 50%;
       }
       .name{
-        font-size: 15px;
+        font-size: 14px;
+        margin-top: 6px;
+        line-height: 1.1;
       }
     }
     @media (max-width:380px){
