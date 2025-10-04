@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Johnny Depp</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 40px;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+    }
+   
+    .star-layout {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+    }
+
+    .star-photo img {
+      width:320px;
+      border-radius: 12px;
+      display: block;
+    }
+    .star-info {
+      flex: 1;
+      text-align: left;
+      max-width: 700px;
+    }
+    .star-info h1 { margin-top: 0; font-size: 34px; }
+    
+    .star-info p  { font-size: 18px; line-height: 1.6; margin-bottom: 20px; }
+    
+    .pay-button {
+      display: inline-block;
+      padding: 12px 22px;
+      background: #000;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-bottom: 25px;
+      font-size: 16px;
+    }
+    .pay-button:hover { background: #444; }
+
+    .gallery {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .gallery img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<main class="star-layout">
+  <div class="star-photo">
+    <img src="images/depp-main.jpg" alt="Johnny Depp">
+  </div>
+
+  <div class="star-info">
+    <h1>Johnny Depp</h1>
+    <p>
+     Johnny Depp (born 1963) is an American actor, producer, and musician, best known for his roles in Pirates of the Caribbean, Edward Scissorhands, and many collaborations with director Tim Burton.
+    </p>
+    <a href="payment.html" class="pay-button">PAY FOR YOUR VIDEO CALL</a>
+
+    <div class="gallery">
+      <img src="images/depp-1.jpg" alt="Photo 1">
+      <img src="images/depp-2.jpg" alt="Photo 2">
+      <img src="images/depp-3.jpg" alt="Photo 3">
+      <img src="images/depp-4.jpg" alt="photo 4">
+    </div>
+  </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CallCelebrity</title>
+  <style>
+    body{font-family:Arial,sans-serif;text-align:center;background:#f9f9ff}
+    h1{margin:20px 0}
+    .gallery{
+      display:grid;                         
+      grid-template-columns:repeat(3,1fr);  
+      justify-items:center;
+      gap:5px;
+      max-width:900px;
+      margin:0 auto;               
+    }
+    .gallery a{
+      text-decoration:none;
+      color:#000;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      margin-bottom: 20px;
+    }
+    .gallery img{
+      width:275px;
+      height:275px;
+      object-fit:cover;
+      border-radius:50%;
+      border:3px solid #ddd;
+      transition:transform .2s
+    }
+    .gallery img:hover{transform:scale(1.05)}
+    .name{margin-top:10px;font-weight:700}
+    
+    @media (max-width: 900px){
+      .gallery{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 16px;
+      }
+      .gallery img{
+        width: 200px;
+        height: 200px;
+      }
+      .name{
+        margin-top: 6px;
+        font-size: 16px;
+      }
+    }
+    @media (max-width: 600px){
+      .gallery{
+        grid-template-columns: repeat(3,1fr);
+        gap: 14px;
+      }
+      .gallery img{
+        width: 150px;
+        height: 150px;
+      }
+      .name{
+        font-size: 15px;
+      }
+    }
+    @media (max-width:380px){
+      .gallery{
+       grid-template-columns: 1fr;
+       gap: 12px;
+      }
+      .gallery img{
+        width: 130px;
+        height: 130px;
+      }
+      .name{
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="gallery">
+    <a href="leto-main.html"><img src="images/leto-main.jpg" alt="Jared Leto"><div class="name">Jared Leto</div></a>
+    <a href="depp-main.html"><img src="images/depp-main.jpg" alt="Johnny Depp"><div class="name">Johnny Depp</div></a>
+    <a href="kruz-main.html"><img src="images/kruz-main.jpg" alt="Tom Cruise"><div class="name">Tom Cruise</div></a>
+    <a href="gadot-main.html"><img src="images/gadot-main.jpg" alt="Gal Gadot"><div class="name">Gal Gadot</div></a>
+    <a href="ackles-main.html"><img src="images/ackles-main.jpg" alt="Jensen Ackles"><div class="name">Jensen Ackles</div></a>
+
+    <a href="model1.html"><img src="images/model1.jpg" alt="Carolina"><div class="name">Carolina</div></a>
+    <a href="model3.html"><img src="images/model3.jpg" alt="Anna"><div class="name">Anna</div></a>
+    <a href="model4.html"><img src="images/model4.jpg" alt="Angelina"><div class="name">Angelina</div></a>
+    <a href="model5.html"><img src="images/model5.jpg" alt="Cait"><div class="name">Cait</div></a>
+    <a href="model6.html"><img src="images/model6.jpg" alt="Lily"><div class="name">Lily</div></a>
+
+    <a href="model7.html"><img src="images/model7.jpg" alt="Sahara"><div class="name">Sahara</div></a>
+    <a href="model8.html"><img src="images/model8.jpg" alt="Sofia"><div class="name">Sofia</div></a>
+  </div>
+</body>
+</html>
