@@ -141,11 +141,11 @@
     item.addEventListener('click', () => {
       popup.style.display = 'flex' ;
       if (item.tagName === 'IMG') {
-        popupImg.scr = item.scr;
+        popupImg.src = item.scr;
         popupImg.style.display = 'block';
         popupVideo.style.display = 'none';
       } else {
-        popupVideo.scr = item.scr;
+        popupVideo.src = item.scr;
         popupVideo.style.display = 'block';
         popupImg.style.display = 'none';
       }
