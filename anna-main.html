@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Anna Grusheva</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 40px;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+    }
+   
+    .star-layout {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+    }
+
+    .star-photo img {
+      width: 320px;
+      border-radius: 12px;
+      display: block;
+    }
+    .star-info {
+      flex: 1;
+      text-align: left;
+      max-width: 700px;
+    }
+    .star-info h1 { margin-top: 0; font-size: 34px; }
+    
+    .star-info p  { font-size: 18px; line-height: 1.6; margin-bottom: 20px; }
+    
+    .pay-button {
+      display: inline-block;
+      padding: 12px 22px;
+      background: #000;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+    .pay-button:hover { background: #444; }
+
+    .gallery {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .gallery img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .gallery video,
+    .gallery img{
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3 ease;
+    }
+    .gallery video:hover,
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .small-video {
+      width: 180px;
+      border-radius: 10px;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<main class="star-layout">
+  <div class="star-photo">
+    <img src="images/anna-main.png" alt="Anna Grusheva">
+  </div>
+
+  <div class="star-info">
+    <h1>Anna Grusheva</h1>
+    <p>
+       Stylist & buyer/Paris consierge. Online consultation 30 min/50€. Stylist in Paris 1 hour/100€
+    </p>
+    <a href="payment.html" class="pay-button">PAY FOR YOUR VIDEO CALL</a>
+
+    <div class="gallery">
+      <img src="images/anna-main.png" alt="Photo 1">
+      <img src="images/anna-1.png" alt="Photo 2">
+      <video controls class="small-video">
+        <source src="images/anna.v.MP4" type="video/MP4">
+      </video>
+    </div>
+  </div>
+</main>
+</body>
+</html>
