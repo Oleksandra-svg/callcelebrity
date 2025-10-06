@@ -9,11 +9,13 @@
     h1{margin:20px 0}
     .gallery{
       display:grid;                         
-      grid-template-columns:repeat(3,1fr);  
-      justify-items:center;
-      gap:5px;
-      max-width:900px;
-      margin:0 auto;               
+      grid-template-columns:repeat(6,minmax (160px,1fr));  
+      justify-content:center;
+      align-content: start;
+      gap:16px 22px;
+      max-width:980px;
+      margin:0 auto;
+      min-height: calc(100vh - 180px);               
     }
     .gallery a{
       text-decoration:none;
@@ -21,54 +23,60 @@
       display:flex;
       flex-direction:column;
       align-items:center;
-      margin-bottom: 20px;
     }
     .gallery img{
-      width:275px;
-      height:275px;
+      width:220px;
+      height:220px;
       object-fit:cover;
       border-radius:50%;
       border:3px solid #ddd;
       transition:transform .2s
     }
     .gallery img:hover{transform:scale(1.05)}
-    .name{margin-top:10px;font-weight:700}
+    .name{margin-top:6px;line-height:1.1; font-weight: 700;}
     
-    @media (max-width: 900px){
+    @media (max-width: 1024px){
       .gallery{
         display: grid;
         grid-template-columns: repeat(3,1fr);
         gap: 16px;
       }
       .gallery img{
-        width: 200px;
-        height: 200px;
+        width: 180x;
+        height: 180px;
+        height: 180px;
       }
       .name{
         margin-top: 6px;
         font-size: 16px;
       }
     }
-    @media (max-width: 600px){
+    @media (max-width: 768px){
       .gallery{
         display: grid;
         grid-template-columns: repeat(3,1fr);
-        gap: 12px;
+        gap: 12px 8px;
         justify-items: center;
+        max-width: 560px;
       }
       .gallery a{
         margin-bottom: 10px;
       }
       .gallery img{
-        width: 120px;
-        height: 120px;
+        width: calc(33vw - 24px);
+        height: calc(33vw - 24px);
         object-fit: cover;
         border-radius: 50%;
+        max-width: 140px;
+        max-height: 140px;
       }
       .name{
         font-size: 14px;
-        margin-top: 6px;
+        margin-top: 4px;
         line-height: 1.1;
+      }
+      body{
+        padding-bottom: 24px;
       }
     }
     @media (max-width:380px){
@@ -77,13 +85,22 @@
        gap: 12px;
       }
       .gallery img{
-        width: 130px;
-        height: 130px;
+        max-width: 120px;
+        max-height: 120px;
       }
       .name{
-        font-size: 14px;
+        font-size: 13px;
       }
     }
+    @media (orientation: landscape){
+    .gallery {
+      grid-template-columns: repeat(5,1fr);
+    }
+    .gallery img{
+      width: min(18hv, 130px);
+      height: min(18hv,130px);
+    }
+  }
   </style>
 </head>
 <body>

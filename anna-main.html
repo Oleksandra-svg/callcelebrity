@@ -73,32 +73,36 @@
       border-radius: 10px;
       margin: 10px;
     }
-    .popup {
-      display: none;
+    .lightbox{
       position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.8);
-      justify-content: center;
+      inset: 0;
+      background: rgba(0,0, 0, .6);
+      display: none;
       align-items: center;
+      justify-content: center;
+      padding: 24px;
+      z-index: 9999;
     }
-    .popup .close {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      font-size: 40px;
-      color: white;
-      cursor: pointer;
-    }
-    .popup img,
-    .popup video {
-      max-width: 90%;
-      max-height: 80%;
+    .lightbox img,
+    .lightbox video{
+      display: none;
+      max-width: 90vw;
+      max-height: 90vh;
       border-radius: 10px;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+      box-shadow: 0 10px 40px rgba(0,0,0, .5);
+    }
+    .lightbox__close{
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 36px;
+      height: 36px;
+      border: 0;
+      border-radius: 18px;
+      background: rgba(255,255, 255, .9);
+      font-size: 24px;
+      line-height: 36px;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -123,42 +127,41 @@
         <source src="images/anna.v.MP4" type="video/MP4">
       </video>
     </div>
-    <div id="popup" class="popup">
-      <span class="close">&times;</span>
-      <img id="popup-img" src="" alt="">
-      <video id="popup-video" controls></video>
+    <div id="lightbox" class="lightbox" aria-hidden="true"> 
+      <button class="lightbox__close" aria-label="Close">x</button>
+      <img id="lightbox-img" src="" alt="">
+      <video id="lightbox-video" controls playsinline></video>
     </div>
   </div>
 </main>
 <script>
-  console.log("work on")
-  const popup = document.getElementById('popup');
-  const popupImg = document.getElementById('popup-img');
-  const popupVideo = document.getElementById('popup-video');
-  const closeBtn = document.querySelector('.popup .close');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxVideo = document.getElementById('lightbox-video');
+  const closeBtn = document.querySelector('.lightbox .close');
 
-  document.querySelectorAll('.gallery img, .gallery video').forEach(items => {
+  document.querySelectorAll('.gallery img, .gallery video').forEach(item => {
     item.addEventListener('click', () => {
-      popup.style.display = 'flex' ;
+      lightbox.style.display = 'flex' ;
       if (item.tagName === 'IMG') {
-        popupImg.src = item.scr;
-        popupImg.style.display = 'block';
-        popupVideo.style.display = 'none';
+        lightbox.src = item.scr;
+        lightboxImg.style.display = 'block';
+        lightboxVideo.style.display = 'none';
       } else {
-        popupVideo.src = item.scr;
-        popupVideo.style.display = 'block';
-        popupImg.style.display = 'none';
+        lightboxVideo.src = item.scr;
+        lightboxVideo.style.display = 'block';
+        lightboxImg.style.display = 'none';
       }
     });
   });
   closeBtn.addEventListener('click', () => {
-    popup.style.display = 'none';
-    popupVideo.pause();
+    lightbox.style.display = 'none';
+    lightboxVideo.pause();
   });
-  popup.addEventListener('click', (e) => {
-    if (e.target === popup) {
-      popup.style.display ='none';
-      popupVideo.pause();
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display ='none';
+      lightboxVideo.pause();
     }
   })
 </script>
